@@ -622,9 +622,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		},
 		
 		_repositionInfo: function($el) {
+
+			var self = this;
+			
 			return {
 				dimension: {
-					height: $el.outerHeight(false),
+					height: self.options.maxHeight || $el.outerHeight(false),
 					width: $el.outerWidth(false)
 				},
 				offset: $el.offset(),
